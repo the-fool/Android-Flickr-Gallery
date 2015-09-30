@@ -59,10 +59,6 @@ public class PhotoGalleryFragment extends VisibleFragment {
 
         updateItems();
 
-        /*Intent i = new Intent(getActivity(), PollService.class);
-        getActivity().startService(i);*/
-
-
         mThumbnailThread = new ThumbnailDownloader<ImageView>(new Handler());
         mThumbnailThread.setListener(new ThumbnailDownloader.Listener<ImageView>() {
             public void onThumbnailDownloaded(ImageView imageView, Bitmap thumbnail) {

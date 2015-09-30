@@ -15,7 +15,7 @@ import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.*;
+
 
 public class FlickrFetchr {
     public static final String TAG = "FlickrFetchr";
@@ -67,7 +67,6 @@ public class FlickrFetchr {
 
         try {
             String xmlString = getUrl(url);
-            Log.i(TAG, "Received XML: " + xmlString);
             XmlPullParserFactory f = XmlPullParserFactory.newInstance();
             XmlPullParser parser = f.newPullParser();
             parser.setInput(new StringReader(xmlString));

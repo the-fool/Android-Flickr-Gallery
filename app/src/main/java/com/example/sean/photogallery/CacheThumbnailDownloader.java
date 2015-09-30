@@ -9,11 +9,9 @@ import android.util.Log;
 
 import java.io.IOException;
 
-/**
- * Created by Sean on 6/18/2015.
- */
+
 public class CacheThumbnailDownloader extends HandlerThread {
-    private static final String TAG = "CacheThumbnailDownloader";
+    private static final String TAG = "CacheThumbDownloader";
 
     private static final int MESSAGE_CACHE_DOWNLOAD = 1;
 
@@ -46,7 +44,6 @@ public class CacheThumbnailDownloader extends HandlerThread {
                 byte[] bitmapBytes = new FlickrFetchr().getUrlBytes(url);
                 Bitmap bitmap = BitmapFactory.decodeByteArray(bitmapBytes, 0, bitmapBytes.length);
                 SingletonLruCache.addBitmapToMemoryCache(url, bitmap);
-                Log.i(TAG, "Bitmap created");
             }
 
         } catch (IOException e) {
